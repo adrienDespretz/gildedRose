@@ -18,11 +18,6 @@ namespace GildedRose.Tests
         }
 
         [TestMethod]
-        public void Should_UpdateQuality(){
-            this.shop.UpdateQuality();
-        }
-
-        [TestMethod]
         public void Should_HaveSellIn(){
             Assert.AreEqual(10, this.shop.itemList[0].sellIn);
         }
@@ -30,6 +25,13 @@ namespace GildedRose.Tests
         [TestMethod]
         public void Should_HaveQuality(){
             Assert.AreEqual(8, this.shop.itemList[0].quality);
+        }
+
+        [TestMethod]
+        public void Should_UpdateItemProperties(){
+            this.shop.UpdateQuality();
+            Assert.AreEqual(9, this.shop.itemList[0].sellIn);
+            Assert.AreEqual(7, this.shop.itemList[0].quality);
         }
     }
 }
