@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using GildedRose;
+using GildedRose.Items;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace GildedRose.Tests
@@ -9,16 +10,16 @@ namespace GildedRose.Tests
     {
         public Shop shop;
         private List<Item> itemList = new List<Item>(){
-            new Item("Classic", 10, 8),
-            new Item("Classic", -1, 8),
-            new Item("Classic", -1, 1),
-            new Item("Aged Brie", 5, 4),
-            new Item("Aged Brie", 5, 50),
-            new Item("Sulfuras", 5, 80),
-            new Item("Backstage Pass", 15, 10),
-            new Item("Backstage Pass", 10, 10),
-            new Item("Backstage Pass", 5, 10),
-            new Item("Backstage Pass", 0, 10),
+            new GenericItem("Classic", 10, 8),
+            new GenericItem("Classic", -1, 8),
+            new GenericItem("Classic", -1, 1),
+            new AgingItem("Aged Brie", 5, 4),
+            new AgingItem("Aged Brie", 5, 50),
+            new LegendaryItem("Sulfuras", 5, 80),
+            new EventItem("Backstage Pass", 15, 10),
+            new EventItem("Backstage Pass", 10, 10),
+            new EventItem("Backstage Pass", 5, 10),
+            new EventItem("Backstage Pass", 0, 10),
         };
 
         [TestInitialize]
