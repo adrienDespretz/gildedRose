@@ -4,10 +4,10 @@ namespace GildedRose
 {
     public class Shop
     {
-        public IList<Item> itemList { get; }
+        public IList<Item> itemList { get; private set; }
 
-        public Shop(){
-            this.itemList = new List<Item>();
+        public Shop(IList<Item> itemList){
+            this.itemList = itemList;
         }
 
         public void UpdateQuality(){

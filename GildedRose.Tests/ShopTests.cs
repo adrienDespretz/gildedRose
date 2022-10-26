@@ -1,4 +1,5 @@
-﻿using GildedRose;
+﻿using System.Collections.Generic;
+using GildedRose;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace GildedRose.Tests
@@ -7,10 +8,13 @@ namespace GildedRose.Tests
     public class ShopTests
     {
         public Shop shop;
+        private List<Item> itemList = new List<Item>(){
+            new Item(10, 8),
+        };
 
         [TestInitialize]
         public void Setup(){
-            this.shop = new Shop();
+            this.shop = new Shop(itemList);
         }
 
         [TestMethod]
@@ -19,8 +23,13 @@ namespace GildedRose.Tests
         }
 
         [TestMethod]
-        public void Should_GetItems(){
-            Assert.AreEqual(0, this.shop.itemList.Count);
+        public void Should_HaveSellIn(){
+            Assert.AreEqual(10, this.shop.itemList[0].sellIn);
+        }
+
+        [TestMethod]
+        public void Should_HaveQuality(){
+            Assert.AreEqual(8, this.shop.itemList[0].quality);
         }
     }
 }
