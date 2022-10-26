@@ -4,11 +4,13 @@ namespace GildedRose
 {
     public class Item
     {
+        public string name { get; private set; }
         public int sellIn { get; private set; }
         public int quality { get; private set; }
 
-        public Item(int sellIn, int quality)
+        public Item(string name, int sellIn, int quality)
         {
+            this.name = name;
             this.sellIn = sellIn;
             this.quality = quality;
         }
@@ -18,10 +20,14 @@ namespace GildedRose
         }
 
         public void DecreaseQuality(){
-            if(this.sellIn < 0){
+            if(this.name == "Aged Brie"){
+                this.quality++;
+            }else{
+                if(this.sellIn < 0){
+                    this.quality--;
+                }
                 this.quality--;
             }
-            this.quality--;
 
             if(this.quality < 0){
                 this.quality = 0;

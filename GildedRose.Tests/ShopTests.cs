@@ -9,9 +9,10 @@ namespace GildedRose.Tests
     {
         public Shop shop;
         private List<Item> itemList = new List<Item>(){
-            new Item(10, 8),
-            new Item(-1, 8),
-            new Item(-1, 1),
+            new Item("Classic", 10, 8),
+            new Item("Classic", -1, 8),
+            new Item("Classic", -1, 1),
+            new Item("Aged Brie", 5, 4),
         };
 
         [TestInitialize]
@@ -46,6 +47,12 @@ namespace GildedRose.Tests
         public void Should_NotHaveNegativeQuality(){
             this.shop.UpdateQuality();
             Assert.AreEqual(0, this.shop.itemList[2].quality);
+        }
+
+        [TestMethod]
+        public void Should_IncreaseAgedBrieQuality(){
+            this.shop.UpdateQuality();
+            Assert.AreEqual(5, this.shop.itemList[3].quality);
         }
     }
 }
