@@ -6,10 +6,16 @@ namespace GildedRose.Tests
     [TestClass]
     public class ShopTests
     {
+        public Shop shop;
+
+        [TestInitialize]
+        public void Setup(){
+            this.shop = new Shop();
+        }
+
         [TestMethod]
-        public void Should_Build()
-        {
-            Shop shop = new Shop();
+        public void Should_UpdateQuality(){
+            this.shop.UpdateQuality();
         }
     }
 }
