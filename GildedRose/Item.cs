@@ -13,12 +13,15 @@ namespace GildedRose
             this.quality = quality;
         }
 
-        public void DecreaseQuality(){
-            this.quality--;
-        }
-
         public void DecreaseSellIn(){
             this.sellIn--;
+        }
+
+        public void DecreaseQuality(){
+            if(this.sellIn < 0){
+                this.quality--;
+            }
+            this.quality--;
         }
     }
 }
