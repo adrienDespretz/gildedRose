@@ -17,5 +17,10 @@ namespace GildedRose.Tests
         public void Should_UpdateQuality(){
             this.shop.UpdateQuality();
         }
+
+        [TestMethod]
+        public void Should_GetItems(){
+            Assert.AreEqual(0, this.shop.itemList.Count);
+        }
     }
 }
