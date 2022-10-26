@@ -12,8 +12,8 @@ namespace GildedRose
 
         public void UpdateQuality(){
             foreach(Item item in this.itemList){
-                item.DecreaseSellIn();
-                item.DecreaseQuality();
+                item.UpdateSellIn();
+                item.UpdateQuality();
             }
         }
     }

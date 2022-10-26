@@ -15,22 +15,48 @@ namespace GildedRose
             this.quality = quality;
         }
 
-        public void DecreaseSellIn(){
+        public void UpdateSellIn(){
             this.sellIn--;
         }
 
-        public void DecreaseQuality(){
-            if(this.name == "Aged Brie"){
-                this.quality++;
-            }else{
-                if(this.sellIn < 0){
-                    this.quality--;
-                }
-                this.quality--;
+        public void UpdateQuality()
+        {
+            switch(this.name){
+                case "Aged Brie" : UpdateAgingItemQuality(); break;
+                default : UpdateGenericItemQuality(); break;
             }
 
-            if(this.quality < 0){
+            FloorQualityToZero();
+            TopQualityToFifty();
+        }
+
+        private void UpdateGenericItemQuality()
+        {
+            if (this.sellIn < 0)
+            {
+                this.quality--;
+            }
+            this.quality--;
+        }
+
+        private void UpdateAgingItemQuality()
+        {
+            this.quality++;
+        }
+
+        private void FloorQualityToZero()
+        {
+            if (this.quality < 0)
+            {
                 this.quality = 0;
+            }
+        }
+
+        private void TopQualityToFifty()
+        {
+            if (this.quality > 50)
+            {
+                this.quality = 50;
             }
         }
     }
