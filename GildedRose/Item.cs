@@ -15,6 +15,14 @@ namespace GildedRose
             this.quality = quality;
         }
 
+        public void Update(){
+            if(this.name == "Sulfuras"){
+                return;
+            }
+            UpdateSellIn();
+            UpdateQuality();
+        }
+
         public void UpdateSellIn(){
             this.sellIn--;
         }

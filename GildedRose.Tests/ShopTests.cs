@@ -14,6 +14,7 @@ namespace GildedRose.Tests
             new Item("Classic", -1, 1),
             new Item("Aged Brie", 5, 4),
             new Item("Aged Brie", 5, 50),
+            new Item("Sulfuras", 5, 80),
         };
 
         [TestInitialize]
@@ -60,6 +61,13 @@ namespace GildedRose.Tests
         public void Should_NotIncreaseQualityOverFifty(){
             this.shop.UpdateQuality();
             Assert.AreEqual(50, this.shop.itemList[4].quality);
+        }
+
+        [TestMethod]
+        public void Should_NotUpdateLegendaryItemProperties(){
+            this.shop.UpdateQuality();
+            Assert.AreEqual(5, this.shop.itemList[5].sellIn);
+            Assert.AreEqual(80, this.shop.itemList[5].quality);
         }
     }
 }
