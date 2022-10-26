@@ -11,6 +11,7 @@ namespace GildedRose.Tests
         private List<Item> itemList = new List<Item>(){
             new Item(10, 8),
             new Item(-1, 8),
+            new Item(-1, 1),
         };
 
         [TestInitialize]
@@ -39,6 +40,12 @@ namespace GildedRose.Tests
         public void Should_DecreaseQualityTwiceAsFastAfterExpiration(){
             this.shop.UpdateQuality();
             Assert.AreEqual(6, this.shop.itemList[1].quality);
+        }
+
+        [TestMethod]
+        public void Should_NotHaveNegativeQuality(){
+            this.shop.UpdateQuality();
+            Assert.AreEqual(0, this.shop.itemList[2].quality);
         }
     }
 }

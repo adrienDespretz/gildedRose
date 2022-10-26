@@ -22,6 +22,10 @@ namespace GildedRose
                 this.quality--;
             }
             this.quality--;
+
+            if(this.quality < 0){
+                this.quality = 0;
+            }
         }
     }
 }
