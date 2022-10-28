@@ -8,7 +8,13 @@ namespace GildedRose.ItemsRepository
         public List<Item> itemList = new List<Item>();
         
         protected List<Item> GetInventory(){
-            return itemList;
+            return this.itemList;
+        }
+
+        protected void SaveInventory(List<Item> itemList){
+            foreach(Item item in itemList){
+                this.itemList.Add(item);
+            }
         }
     }
 }
