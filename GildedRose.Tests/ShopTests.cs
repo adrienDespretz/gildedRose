@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using GildedRose;
 using GildedRose.Items;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
