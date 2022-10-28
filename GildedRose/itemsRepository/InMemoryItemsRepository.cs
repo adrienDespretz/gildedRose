@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GildedRose.items
+namespace GildedRose.itemsRepository
 {
     public class InMemoryItemsRepository
     {
