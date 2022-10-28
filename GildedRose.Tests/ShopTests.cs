@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using GildedRose.Items;
+using GildedRose.ItemsRepository;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace GildedRose.Tests
@@ -84,5 +85,6 @@ namespace GildedRose.Tests
         public void Should_DecreaseConjuredItemsTwiceAsFastAsGenericItems(){
             Assert.AreEqual(6, this.shop.itemList[10].quality);
         }
+
     }
 }
