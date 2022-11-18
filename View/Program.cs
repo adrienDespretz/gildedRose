@@ -32,7 +32,7 @@ namespace GildedRose
                         var inventory = _repository.GetInventory();
                         foreach (var item in inventory)
                         {
-                            Console.WriteLine("- Nom : " + item.name + " \t/ Sell in : " + item.sellIn + " \t/ Qualité : " + item.quality);
+                            Console.WriteLine("- Nom : " + item.name + " \t/ Sell in : " + item.sellIn + " \t/ Qualité : " + item.quality + " \t/ Prix : " + item.basePrice);
                         }
                         break;
                     case "2":
