@@ -33,7 +33,6 @@ namespace GildedRose.ItemsRepository
             }
 
         }
-
         public List<Item> GetInventory()
         {
             return itemsList.ToList();
@@ -43,5 +42,6 @@ namespace GildedRose.ItemsRepository
         {
             return itemsList.ToList().Where(x => x.quality == quality && x.name == type).FirstOrDefault();
         }
+
     }
 }
