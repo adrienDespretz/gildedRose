@@ -6,8 +6,8 @@ namespace GildedRose.ItemsRepository
 {
     public interface ItemRepository
     {
-        protected void SaveInventory(List<Item> itemList);
-        protected List<Item> GetInventory();
-        protected Item FindItem(string type, int quality);
+        public void SaveInventory(List<Item> itemList);
+        public List<Item> GetInventory();
+        public Item FindItem(string type, int quality);
     }
 }
