@@ -1,7 +1,7 @@
 namespace GildedRose.Items{
     public class EventItem : Item
     {
-        public EventItem(string name, int sellIn, int quality) : base(name, sellIn, quality)
+        public EventItem(string name, int sellIn, int quality, double basePrice) : base(name, sellIn, quality, basePrice)
         {
 
         }

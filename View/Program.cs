@@ -5,10 +5,13 @@ namespace GildedRose
 {
     class Program
     {
+
         static void Main(string[] args)
         {
             bool endApp = false;
             FileItemsRepository fileItemsRepository = new FileItemsRepository();
+            var itemlist = fileItemsRepository.GetInventory();
+            Shop shop = new Shop(itemlist);
 
             Console.WriteLine("Gilded Rose\r");
             Console.WriteLine("------------------------\n");
@@ -36,14 +39,17 @@ namespace GildedRose
                     case "2":
                         break;
                     case "3":
-                        var itemlist = fileItemsRepository.GetInventory();
-                        Shop shop = new Shop(itemlist);
                         shop.UpdateQuality();
                         Console.WriteLine("Item has been updated");
 
                         break;
                     case "4":
-
+                        Console.WriteLine("Type : ");
+                        var type = Console.ReadLine();
+                        Console.WriteLine("Quality : ");
+                        var quality = Console.Read();
+                        shop.SellItem(type, quality);
+                        Console.WriteLine("Item has been Sell");
                         break;
 
 

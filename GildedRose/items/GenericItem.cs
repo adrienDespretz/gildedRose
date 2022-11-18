@@ -3,7 +3,7 @@ namespace GildedRose.Items
     public class GenericItem : Item
     {
 
-        public GenericItem(string name, int sellIn, int quality) : base(name, sellIn, quality)
+        public GenericItem(string name, int sellIn, int quality, double basePrice) : base(name, sellIn, quality, basePrice)
         {
 
         }
