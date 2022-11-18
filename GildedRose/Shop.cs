@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using GildedRose.Items;
@@ -7,24 +8,38 @@ namespace GildedRose
 {
     public class Shop
     {
-        public IList<Item> itemList { get; private set; }
-        public float balance { get; private set; }
-        public FileItemsRepository fileItemsRepository { get; private set; }
+        public double balance { get; private set; }
+        public ItemRepository repository;
 
-        public Shop(IList<Item> itemList){
-            this.itemList = itemList;
+        public Shop(ItemRepository repository)
+        {
+            this.repository = repository;
         }
 
         public void UpdateQuality(){
-            foreach(Item item in this.itemList){
+            List<Item> itemList = this.repository.GetInventory();
+            foreach(Item item in itemList){
                 item.Update();
             }
+            this.repository.SaveInventory(itemList);
         }
         public void SellItem(string type , int quality)
         {
-            var itemFind = fileItemsRepository.FindItem(type, quality);
-            balance += itemFind.basePrice;
+            var itemFind = repository.FindItem(type, quality);
+
+            if (itemFind == null) 
+                throw new Exception("Item not found");
+
+            List<Item> itemList = this.repository.GetInventory();
             itemList.Remove(itemFind);
+            this.repository.SaveInventory(itemList);
+
+            balance += itemFind.basePrice;
+
+        }
+        public double GetBalance()
+        {
+            return this.balance = balance;
         }
     }
 }

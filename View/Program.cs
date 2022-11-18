@@ -1,17 +1,16 @@
-﻿
-using GildedRose.ItemsRepository;
+﻿using GildedRose.ItemsRepository;
 
 namespace GildedRose
 {
-    class Program
+    public class Program
     {
+        public static ItemRepository _repository = new FileItemsRepository();
 
-        static void Main(string[] args)
+
+        public static void Main(string[] args)
         {
             bool endApp = false;
-            FileItemsRepository fileItemsRepository = new FileItemsRepository();
-            var itemlist = fileItemsRepository.GetInventory();
-            Shop shop = new Shop(itemlist);
+            Shop shop = new Shop(_repository);
 
             Console.WriteLine("Gilded Rose\r");
             Console.WriteLine("------------------------\n");
@@ -30,18 +29,19 @@ namespace GildedRose
                     case "1":
                         Console.WriteLine("Liste des articles : ");
 
-                        var inventory = fileItemsRepository.GetInventory();
+                        var inventory = _repository.GetInventory();
                         foreach (var item in inventory)
                         {
                             Console.WriteLine("- Nom : " + item.name + " \t/ Sell in : " + item.sellIn + " \t/ Qualité : " + item.quality);
                         }
                         break;
                     case "2":
+                        var balance = shop.GetBalance();
+                        Console.WriteLine("Votre solde : " + balance);
                         break;
                     case "3":
                         shop.UpdateQuality();
                         Console.WriteLine("Item has been updated");
-
                         break;
                     case "4":
                         Console.WriteLine("Type : ");
@@ -49,7 +49,6 @@ namespace GildedRose
                         Console.WriteLine("Quality : ");
                         var quality = Console.Read();
                         shop.SellItem(type, quality);
-                        Console.WriteLine("Item has been Sell");
                         break;
 
 

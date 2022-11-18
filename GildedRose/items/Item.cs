@@ -1,3 +1,7 @@
+using Newtonsoft.Json;
+using System;
+using System.ComponentModel;
+
 namespace GildedRose.Items
 {
     public abstract class Item

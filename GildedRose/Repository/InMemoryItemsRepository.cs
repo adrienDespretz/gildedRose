@@ -2,8 +2,10 @@
 using GildedRose.ItemsRepository;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace GildedRose.ItemsRepository
@@ -23,7 +25,6 @@ namespace GildedRose.ItemsRepository
             new EventItem("Backstage Pass", 0, 10,13.5),
             new ConjuredItem("Classic", 10, 8,14.5),
         };
-
 
         public void SaveInventory(List<Item> itemList)
         {
