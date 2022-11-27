@@ -1,70 +1,82 @@
-[
-  {
-    "GenericItem": {
+{
+  "$type": "System.Collections.Generic.List`1[[GildedRose.Items.Item, GildedRose]], System.Private.CoreLib",
+  "$values": [
+    {
+      "$type": "GildedRose.Items.GenericItem, GildedRose",
       "name": "Classic",
-      "sellIn": "10",
-      "quality": "8",
-      "basePrice": "4.5"
+      "sellIn": 10,
+      "quality": 8,
+      "basePrice": 4.5
     },
-    "GenericItem": {
+    {
+      "$type": "GildedRose.Items.GenericItem, GildedRose",
       "name": "Classic",
-      "sellIn": "-1",
-      "quality": "8",
-      "basePrice": "5.5"
+      "sellIn": -1,
+      "quality": 8,
+      "basePrice": 5.5
     },
-    "GenericItem": {
+    {
+      "$type": "GildedRose.Items.GenericItem, GildedRose",
       "name": "Classic",
-      "sellIn": "-1",
-      "quality": "1",
-      "basePrice": "6.5"
+      "sellIn": -1,
+      "quality": 1,
+      "basePrice": 6.5
     },
-    "AgingItem": {
+    {
+      "$type": "GildedRose.Items.AgingItem, GildedRose",
       "name": "Aged Brie",
-      "sellIn": "5",
-      "quality": "4",
-      "basePrice": "7.5"
+      "sellIn": 5,
+      "quality": 4,
+      "basePrice": 7.5
     },
-    "AgingItem": {
+    {
+      "$type": "GildedRose.Items.AgingItem, GildedRose",
       "name": "Aged Brie",
-      "sellIn": "5",
-      "quality": "50",
-      "basePrice": "8.5"
+      "sellIn": 5,
+      "quality": 50,
+      "basePrice": 8.5
     },
-    "LegendaryItem": {
+    {
+      "$type": "GildedRose.Items.LegendaryItem, GildedRose",
       "name": "Sulfuras",
-      "sellIn": "5",
-      "quality": "80",
-      "basePrice": "9.5"
+      "sellIn": 5,
+      "quality": 80,
+      "basePrice": 9.5
     },
-    "EventItem": {
+    {
+      "$type": "GildedRose.Items.EventItem, GildedRose",
       "name": "Backstage Pass",
-      "sellIn": "15",
-      "quality": "10",
-      "basePrice": "10.5"
+      "sellIn": 15,
+      "quality": 10,
+      "basePrice": 10.5
     },
-    "EventItem": {
+    {
+      "$type": "GildedRose.Items.EventItem, GildedRose",
       "name": "Backstage Pass",
-      "sellIn": "10",
-      "quality": "10",
-      "basePrice": "11.5"
+      "sellIn": 10,
+      "quality": 10,
+      "basePrice": 11.5
     },
-    "EventItem": {
+    {
+      "$type": "GildedRose.Items.EventItem, GildedRose",
       "name": "Backstage Pass",
-      "sellIn": "5",
-      "quality": "10",
-      "basePrice": "12.5"
+      "sellIn": 5,
+      "quality": 10,
+      "basePrice": 12.5
     },
-    "EventItem": {
+    {
+      "$type": "GildedRose.Items.EventItem, GildedRose",
       "name": "Backstage Pass",
-      "sellIn": "0",
-      "quality": "10",
-      "basePrice": "13.5"
+      "sellIn": 0,
+      "quality": 10,
+      "basePrice": 13.5
     },
-    "ConjuredItem": {
+    {
+      "$type": "GildedRose.Items.ConjuredItem, GildedRose",
       "name": "Classic",
-      "sellIn": "10",
-      "quality": "8",
-      "basePrice": "14.5"
+      "sellIn": 10,
+      "quality": 8,
+      "basePrice": 14.5
     }
-  }
-]
+  ]
+}

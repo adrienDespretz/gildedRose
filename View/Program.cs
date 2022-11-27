@@ -1,10 +1,11 @@
-﻿using GildedRose.ItemsRepository;
+﻿using GildedRose.Items;
+using GildedRose.ItemsRepository;
 
 namespace GildedRose
 {
     public class Program
     {
-        public static ItemRepository _repository = new FileItemsRepository();
+        public static ItemRepository _repository = new InMemoryItemsRepository();
 
 
         public static void Main(string[] args)
@@ -44,11 +45,23 @@ namespace GildedRose
                         Console.WriteLine("Item has been updated");
                         break;
                     case "4":
-                        Console.WriteLine("Type : ");
+                        int i = 1;
+                        foreach (Item item in _repository.GetInventory())
+                        {
+                            Console.WriteLine("- Nom : " + item.name + " \t/ Sell in : " + item.sellIn + " \t/ Qualité : " + item.quality + " \t/ Prix : " + item.basePrice);
+                        }
+                        Console.WriteLine("Nom : ");
                         var type = Console.ReadLine();
                         Console.WriteLine("Quality : ");
-                        var quality = Console.Read();
-                        shop.SellItem(type, quality);
+                        var quality = Convert.ToInt32(Console.ReadLine());
+                        try
+                        {
+                            shop.SellItem(type, quality);
+                            Console.WriteLine("Produit Vendu ");
+                       }
+                        catch (Exception ex) { 
+                            Console.WriteLine(ex.Message); 
+                        }
                         break;
 
 

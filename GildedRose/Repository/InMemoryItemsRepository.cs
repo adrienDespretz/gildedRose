@@ -1,5 +1,6 @@
 ﻿using GildedRose.Items;
 using GildedRose.ItemsRepository;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -28,12 +29,9 @@ namespace GildedRose.ItemsRepository
 
         public void SaveInventory(List<Item> itemList)
         {
-            foreach (Item item in itemList)
-            {
-                itemsList.Add(item);
-            }
-
+            itemsList = itemList.ToList();
         }
+
         public List<Item> GetInventory()
         {
             return itemsList.ToList();

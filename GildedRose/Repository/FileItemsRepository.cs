@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -18,18 +19,16 @@ namespace GildedRose.ItemsRepository
         public FileItemsRepository()
         {
 
-            var fileName = "C:\\Users\\enzoa\\Desktop\\Projets\\gildedRose\\GildedRose\\FileItem.json";
-            string jsonString = File.ReadAllText(fileName);
-            var sitemsList = JsonConvert.DeserializeObject(jsonString);
-            dynamic convertObj = JObject.Parse(jsonString);
+            var fileName = "C:\\Users\\Amieva\\Desktop\\Enzo\\EPSI\\gildedRose\\GildedRose\\FileItem.json";
+            itemsList = JsonConvert.DeserializeObject<List<Item>>(File.ReadAllText(fileName), new JsonSerializerSettings
+            {
+                TypeNameHandling = TypeNameHandling.All
+            });
         }
 
         public void SaveInventory(List<Item> itemList)
         {
-            foreach (Item item in itemList)
-            {
-                itemsList.Add(item);
-            }
+            itemsList = itemList.ToList();
         }
 
         public List<Item> GetInventory()
