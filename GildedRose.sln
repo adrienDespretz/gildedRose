@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GildedRose", "GildedRose\Gi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GildedRose.Tests", "GildedRose.Tests\GildedRose.Tests.csproj", "{CB6715CE-A283-4C70-9C1B-F58822077731}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "View", "View\View.csproj", "{11E40609-7B67-47B9-AC99-6273C9C8433B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleView", "View\ConsoleView.csproj", "{11E40609-7B67-47B9-AC99-6273C9C8433B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

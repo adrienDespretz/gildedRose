@@ -9,7 +9,7 @@ namespace GildedRose.Tests
     public class ShopTests
     {
         public Shop shop;
-        public ItemRepository repository;
+        public ItemsGateway repository;
         [TestInitialize]
         public void Setup(){
             this.shop = new Shop(repository);

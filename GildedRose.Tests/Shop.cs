@@ -8,9 +8,9 @@ namespace GildedRose
     public class Shop
     {
         public double balance { get; private set; }
-        public ItemRepository repository;
+        public ItemsGateway repository;
 
-        public Shop(ItemRepository repository)
+        public Shop(ItemsGateway repository)
         {
             this.repository = repository;
         }
