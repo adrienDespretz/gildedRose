@@ -9,9 +9,9 @@ namespace GildedRose.Items
         public string name { get; protected set; }
         public int sellIn { get; protected set; }
         public int quality { get; protected set; }
-        public double basePrice { get; protected set; }
+        public int basePrice { get; protected set; }
 
-        public Item(string name, int sellIn, int quality,double basePrice)
+        public Item(string name, int sellIn, int quality,int basePrice)
         {
             this.name = name;
             this.sellIn = sellIn;

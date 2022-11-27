@@ -1,7 +1,7 @@
 namespace GildedRose.Items{
     public class AgingItem : Item
     {
-        public AgingItem(string name, int sellIn, int quality, double basePrice) : base(name, sellIn, quality, basePrice)
+        public AgingItem(string name, int sellIn, int quality, int basePrice) : base(name, sellIn, quality, basePrice)
         {
 
         }

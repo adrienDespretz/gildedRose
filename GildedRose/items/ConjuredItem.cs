@@ -3,7 +3,7 @@ namespace GildedRose.Items
     public class ConjuredItem : Item
     {
 
-        public ConjuredItem(string name, int sellIn, int quality, double basePrice) : base(name, sellIn, quality, basePrice)
+        public ConjuredItem(string name, int sellIn, int quality, int basePrice) : base(name, sellIn, quality, basePrice)
         {
 
         }

@@ -6,77 +6,77 @@
       "name": "Classic",
       "sellIn": 10,
       "quality": 8,
-      "basePrice": 4.5
+      "basePrice": 4
     },
     {
       "$type": "GildedRose.Items.GenericItem, GildedRose",
       "name": "Classic",
       "sellIn": -1,
       "quality": 8,
-      "basePrice": 5.5
+      "basePrice": 5
     },
     {
       "$type": "GildedRose.Items.GenericItem, GildedRose",
       "name": "Classic",
       "sellIn": -1,
       "quality": 1,
-      "basePrice": 6.5
+      "basePrice": 6
     },
     {
       "$type": "GildedRose.Items.AgingItem, GildedRose",
       "name": "Aged Brie",
       "sellIn": 5,
       "quality": 4,
-      "basePrice": 7.5
+      "basePrice": 7
     },
     {
       "$type": "GildedRose.Items.AgingItem, GildedRose",
       "name": "Aged Brie",
       "sellIn": 5,
       "quality": 50,
-      "basePrice": 8.5
+      "basePrice": 8
     },
     {
       "$type": "GildedRose.Items.LegendaryItem, GildedRose",
       "name": "Sulfuras",
       "sellIn": 5,
       "quality": 80,
-      "basePrice": 9.5
+      "basePrice": 9
     },
     {
       "$type": "GildedRose.Items.EventItem, GildedRose",
       "name": "Backstage Pass",
       "sellIn": 15,
       "quality": 10,
-      "basePrice": 10.5
+      "basePrice": 10
     },
     {
       "$type": "GildedRose.Items.EventItem, GildedRose",
       "name": "Backstage Pass",
       "sellIn": 10,
       "quality": 10,
-      "basePrice": 11.5
+      "basePrice": 11
     },
     {
       "$type": "GildedRose.Items.EventItem, GildedRose",
       "name": "Backstage Pass",
       "sellIn": 5,
       "quality": 10,
-      "basePrice": 12.5
+      "basePrice": 12
     },
     {
       "$type": "GildedRose.Items.EventItem, GildedRose",
       "name": "Backstage Pass",
       "sellIn": 0,
       "quality": 10,
-      "basePrice": 13.5
+      "basePrice": 13
     },
     {
       "$type": "GildedRose.Items.ConjuredItem, GildedRose",
       "name": "Classic",
       "sellIn": 10,
       "quality": 8,
-      "basePrice": 14.5
+      "basePrice": 14
     }
   ]
 }
