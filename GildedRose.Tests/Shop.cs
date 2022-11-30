@@ -1,5 +1,5 @@
+using GildedRose.Appli;
 using GildedRose.Items;
-using GildedRose.ItemsRepository;
 using System;
 using System.Collections.Generic;
 

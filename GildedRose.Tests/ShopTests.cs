@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
+using GildedRose.Appli;
 using GildedRose.Items;
-using GildedRose.ItemsRepository;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace GildedRose.Tests

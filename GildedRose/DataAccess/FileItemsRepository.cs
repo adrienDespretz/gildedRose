@@ -1,5 +1,5 @@
-﻿using GildedRose.Items;
-using GildedRose.ItemsRepository;
+﻿using GildedRose.Appli;
+using GildedRose.Items;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -19,7 +19,7 @@ namespace GildedRose.ItemsRepository
         public FileItemsRepository()
         {
 
-            var fileName = "C:\\Users\\Amieva\\Desktop\\Enzo\\EPSI\\gildedRose\\GildedRose\\FileItem.json";
+            var fileName = "C:\\Users\\Amieva\\Desktop\\Enzo\\EPSI\\gildedRose\\GildedRose\\DataAccess\\FileItem.json";
             itemsList = JsonConvert.DeserializeObject<List<Item>>(File.ReadAllText(fileName), new JsonSerializerSettings
             {
                 TypeNameHandling = TypeNameHandling.All

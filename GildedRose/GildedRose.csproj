@@ -22,11 +22,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Update="FileItem.json">
+	  <None Update="DataAccess\FileItem.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
 	</ItemGroup>
 
-	<ProjectExtensions><VisualStudio><UserProperties fileitem_1json__JsonSchema="https://download.stackhawk.com/hawk/jsonschema/hawkconfig.json" /></VisualStudio></ProjectExtensions>
+	<ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
 
 </Project>

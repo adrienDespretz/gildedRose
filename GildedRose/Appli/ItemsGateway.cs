@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using GildedRose.Items;
 
-namespace GildedRose.ItemsRepository
+namespace GildedRose.Appli
 {
     public interface ItemsGateway
     {
