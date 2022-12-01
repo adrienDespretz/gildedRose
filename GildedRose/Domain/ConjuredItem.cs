@@ -2,10 +2,11 @@ namespace GildedRose.Items
 {
     public class ConjuredItem : Item
     {
+        public string attributs { get; protected set; }
 
-        public ConjuredItem(string name, int sellIn, int quality, int basePrice) : base(name, sellIn, quality, basePrice)
+        public ConjuredItem(string name, int sellIn, int quality, int basePrice, string attributs) : base(name, sellIn, quality, basePrice)
         {
-
+            this.attributs = attributs;
         }
 
         public override void Update()
