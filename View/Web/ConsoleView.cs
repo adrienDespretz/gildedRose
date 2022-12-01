@@ -91,6 +91,7 @@ namespace ConsoleView.Web
                         LaunchAunctionRequest launchAunction = new LaunchAunctionRequest();
                         launchAunction.BidPrice = item.basePrice;
                         Console.WriteLine($"L'enchère pour l'item {item.name} a été ouvert ");
+                        Console.WriteLine("- Nom : " + item.name + " \t/ Sell in : " + item.sellIn + " \t/ Qualité : " + item.quality + " \t/ Prix : " + item.basePrice);
                         Console.WriteLine($"Le prix commence a {item.basePrice}  ");
                         while (numberAuction <= 2)
                         {
