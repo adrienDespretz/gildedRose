@@ -44,14 +44,24 @@ namespace GildedRose.Appli
             return balance;
         }
 
-        public void UpdateInventory()
+        public int UpdateInventory()
         {
+            int RelicItemUpdate = 0;
             List<Item> itemList = itemsGateway.GetInventory();
             foreach (Item item in itemList)
             {
-                item.Update();
+                if(item.name.ToLower() == "relicitem")
+                {
+                    item.Update();
+                    RelicItemUpdate = item.basePrice;
+                }
+                else
+                {
+                    item.Update();
+                }
             }
             itemsGateway.SaveInventory(itemList);
+            return RelicItemUpdate;
         }
 
         public List<Item> GetInventory()

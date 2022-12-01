@@ -63,7 +63,8 @@ namespace ConsoleView.Web
                         myClass.DisplayBalance(balance);
                         break;
                     case "3":
-                        controller.UpdateInventory();
+                        int balanceMaj = controller.UpdateInventory();
+                        balance= balanceMaj;
                         Console.WriteLine("Inventaire mis a jour ");
                         break;
                     case "4":

@@ -1,4 +1,5 @@
 ﻿using GildedRose.Appli;
+using GildedRose.Domain;
 using GildedRose.Items;
 using Newtonsoft.Json;
 using System;
@@ -25,6 +26,8 @@ namespace GildedRose.ItemsRepository
             new EventItem("Backstage Pass", 5, 10,12),
             new EventItem("Backstage Pass", 0, 10,13),
             new ConjuredItem("Classic", 10, 8,14,"Resistance +15"),
+            new RelicItem("RelicItem",0,0,0),
+            new RelicItem("RelicItem",0,0,0),
         };
 
         public void SaveInventory(List<Item> itemList)

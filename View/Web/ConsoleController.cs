@@ -13,9 +13,9 @@ namespace ConsoleView.Web
         {
            
         }
-        public void UpdateInventory()
+        public int UpdateInventory()
         {
-            shopInputBoudary.UpdateInventory();
+            return shopInputBoudary.UpdateInventory();
         }
 
         public int SellItem(SellItemRequest request)

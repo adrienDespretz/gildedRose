@@ -6,21 +6,24 @@
       "name": "Classic",
       "sellIn": 10,
       "quality": 8,
-      "basePrice": 4
+      "basePrice": 4,
+      "attributs": "Attack +10"
     },
     {
       "$type": "GildedRose.Items.GenericItem, GildedRose",
       "name": "Classic",
       "sellIn": -1,
       "quality": 8,
-      "basePrice": 5
+      "basePrice": 5,
+      "attributs": "Defense +10"
     },
     {
       "$type": "GildedRose.Items.GenericItem, GildedRose",
       "name": "Classic",
       "sellIn": -1,
       "quality": 1,
-      "basePrice": 6
+      "basePrice": 6,
+      "attributs": "Attack +5"
     },
     {
       "$type": "GildedRose.Items.AgingItem, GildedRose",
@@ -41,7 +44,8 @@
       "name": "Sulfuras",
       "sellIn": 5,
       "quality": 80,
-      "basePrice": 9
+      "basePrice": 9,
+      "attributs": "Guérison +7"
     },
     {
       "$type": "GildedRose.Items.EventItem, GildedRose",
@@ -76,7 +80,22 @@
       "name": "Classic",
       "sellIn": 10,
       "quality": 8,
-      "basePrice": 14
+      "basePrice": 14,
+      "attributs": "Resistance +12"
+    },
+    {
+      "$type": "GildedRose.Items.RelicItem, GildedRose",
+      "name": "RelicItem",
+      "sellIn": 0,
+      "quality": 0,
+      "basePrice": 0
+    },
+    {
+      "$type": "GildedRose.Items.RelicItem, GildedRose",
+      "name": "RelicItem",
+      "sellIn": 0,
+      "quality": 0,
+      "basePrice": 0
     }
   ]
 }

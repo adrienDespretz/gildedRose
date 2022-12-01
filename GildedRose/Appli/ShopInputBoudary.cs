@@ -11,7 +11,7 @@ namespace GildedRose.Appli
     public interface ShopInputBoudary
     {
         public int SellItem(SellItemRequest request);
-        public void UpdateInventory();
+        public int UpdateInventory();
         public Item LaunchAunction();
         public double DoBidAunction(LaunchAunctionRequest launchAunction);
     }
