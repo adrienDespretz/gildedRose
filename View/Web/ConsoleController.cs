@@ -9,11 +9,10 @@ namespace ConsoleView.Web
     {
         private readonly ShopInputBoudary shopInputBoudary = new ShopInteractor();
 
-        public ConsoleController()
+        public ConsoleController( )
         {
-
+           
         }
-
         public void UpdateInventory()
         {
             shopInputBoudary.UpdateInventory();
@@ -22,6 +21,16 @@ namespace ConsoleView.Web
         public int SellItem(SellItemRequest request)
         {
             return shopInputBoudary.SellItem(request);
+        }
+
+        public Item LaunchAunction()
+        {
+            return shopInputBoudary.LaunchAunction();  
+        }
+
+        public double DoBidAunction(LaunchAunctionRequest launchAunction)
+        {
+            return shopInputBoudary.DoBidAunction(launchAunction);
         }
     }
 }

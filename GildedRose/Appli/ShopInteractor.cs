@@ -17,6 +17,16 @@ namespace GildedRose.Appli
         {
         }
 
+        public Item LaunchAunction()
+        {
+            var random = new Random();
+            List<Item> itemList = itemsGateway.GetInventory();
+
+            int index = random.Next(itemList.Count);
+            Item item = itemList[index];
+
+            return item;
+        }
         public int SellItem(SellItemRequest request)
         {
             int balance = 0;
@@ -52,6 +62,16 @@ namespace GildedRose.Appli
         public Item FindItem(string type, int quality)
         {
             return itemsGateway.FindItem(type, quality);
+        }
+
+        public double DoBidAunction(LaunchAunctionRequest launchAunction)
+        {
+            if(launchAunction.response.ToLower() == "oui")
+            {
+                launchAunction.BidPrice = launchAunction.BidPrice * 1.1;
+            }
+
+            return launchAunction.BidPrice;
         }
 
 

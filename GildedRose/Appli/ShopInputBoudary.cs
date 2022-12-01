@@ -12,6 +12,7 @@ namespace GildedRose.Appli
     {
         public int SellItem(SellItemRequest request);
         public void UpdateInventory();
-
+        public Item LaunchAunction();
+        public double DoBidAunction(LaunchAunctionRequest launchAunction);
     }
 }

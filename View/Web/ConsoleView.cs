@@ -50,6 +50,7 @@ namespace ConsoleView.Web
                 Console.WriteLine("\t2 - DisplayBalance");
                 Console.WriteLine("\t3 - UpdateInventory");
                 Console.WriteLine("\t4 - SellItem");
+                Console.WriteLine("\t5 - LaunchAunction");
                 Console.Write("Your option? ");
                 // Use a switch statement to do the math.
                 switch (Console.ReadLine())
@@ -64,7 +65,6 @@ namespace ConsoleView.Web
                     case "3":
                         controller.UpdateInventory();
                         Console.WriteLine("Inventaire mis a jour ");
-
                         break;
                     case "4":
                         myClass.DisplayInventory(items);
@@ -72,19 +72,38 @@ namespace ConsoleView.Web
                         Console.WriteLine("Nom : ");
                         sellItemRequest.type = Console.ReadLine();
                         Console.WriteLine("Quality : ");
-                        sellItemRequest.quality = Convert.ToInt32(Console.ReadLine());
                         try
                         {
+                            sellItemRequest.quality = Convert.ToInt32(Console.ReadLine());
                             int result = controller.SellItem(sellItemRequest);
                             balance = result;
                             Console.WriteLine("Produit Vendu ");
                         }
-                        catch (Exception ex)
+                        catch
                         {
-                            Console.WriteLine(ex.Message);
+                            Console.WriteLine("Vous devez entrer un chiffre  ");
                         }
                         break;
+                    case "5":
+                        var item = controller.LaunchAunction();
+                        int numberAuction = 0;
+                        double PriceWithBid = 0;
+                        LaunchAunctionRequest launchAunction = new LaunchAunctionRequest();
+                        launchAunction.BidPrice = item.basePrice;
+                        Console.WriteLine($"L'enchère pour l'item {item.name} a été ouvert ");
+                        Console.WriteLine($"Le prix commence a {item.basePrice}  ");
+                        while (numberAuction <= 2)
+                        {
+                            numberAuction++;
+                            Console.WriteLine($"Enchère {numberAuction}/3 ");
+                            Console.Write("Voulez-vous enchérire ? (oui /non) : ");
+                            launchAunction.response = Console.ReadLine();
+                            PriceWithBid = controller.DoBidAunction(launchAunction);
+                            Console.WriteLine($"Le prix est passé a {PriceWithBid}  ");
 
+                        }
+                        Console.WriteLine($"L'enchère est fini, l'item est parti pour : {PriceWithBid} ");
+                        break;
 
                 }
                 // Wait for the user to respond before closing.
