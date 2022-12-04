@@ -82,5 +82,11 @@ namespace GildedRose.Tests
             CollectionAssert.AreEqual(this.shop.GetInventory(), itemGateway.GetInventory());
         }
 
+        [TestMethod]
+        public void Should_FindItem(){
+            itemGateway.SaveInventory(this.shop.GetInventory());
+            Assert.AreEqual(this.shop.GetInventory()[0], itemGateway.FindItem(this.shop.GetInventory()[0].name, this.shop.GetInventory()[0].quality));
+        }
+
     }
 }
