@@ -19,7 +19,7 @@ namespace GildedRose.ItemsRepository
         public FileItemsRepository()
         {
 
-            var fileName = "C:\\Users\\Amieva\\Desktop\\Enzo\\EPSI\\gildedRose\\GildedRose\\DataAccess\\FileItem.json";
+            var fileName = "C:\\Users\\adrie\\Documents\\EPSI\\Architecture applicative\\GildedRose-perso\\gildedRose\\GildedRose\\DataAccess\\FileItem.json";
             itemsList = JsonConvert.DeserializeObject<List<Item>>(File.ReadAllText(fileName), new JsonSerializerSettings
             {
                 TypeNameHandling = TypeNameHandling.All
