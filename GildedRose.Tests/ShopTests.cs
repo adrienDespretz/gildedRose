@@ -11,12 +11,14 @@ namespace GildedRose.Tests
     {
         public ShopInteractor shop;
         public ItemsGateway itemGateway;
+        public SellItemRequest sellRequest;
         [TestInitialize]
         public void Setup(){
             this.shop = new ShopInteractor();
             this.shop.UpdateInventory();
 
             this.itemGateway = new InMemoryItemsRepository();
+            itemGateway.SaveInventory(this.shop.GetInventory());
         }
 
         [TestMethod]
@@ -78,13 +80,11 @@ namespace GildedRose.Tests
 
         [TestMethod]
         public void Should_SaveInventory(){
-            itemGateway.SaveInventory(this.shop.GetInventory());
             CollectionAssert.AreEqual(this.shop.GetInventory(), itemGateway.GetInventory());
         }
 
         [TestMethod]
         public void Should_FindItem(){
-            itemGateway.SaveInventory(this.shop.GetInventory());
             Assert.AreEqual(this.shop.GetInventory()[0], itemGateway.FindItem(this.shop.GetInventory()[0].name, this.shop.GetInventory()[0].quality));
         }
 
