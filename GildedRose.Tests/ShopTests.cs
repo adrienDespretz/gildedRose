@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using GildedRose.Appli;
 using GildedRose.Items;
+using GildedRose.ItemsRepository;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace GildedRose.Tests
@@ -9,10 +10,13 @@ namespace GildedRose.Tests
     public class ShopTests
     {
         public ShopInteractor shop;
+        public ItemsGateway itemGateway;
         [TestInitialize]
         public void Setup(){
             this.shop = new ShopInteractor();
             this.shop.UpdateInventory();
+
+            this.itemGateway = new InMemoryItemsRepository();
         }
 
         [TestMethod]
@@ -70,6 +74,18 @@ namespace GildedRose.Tests
         [TestMethod]
         public void Should_DecreaseConjuredItemsTwiceAsFastAsGenericItems(){
             Assert.AreEqual(6, this.shop.GetInventory()[10].quality);
+        }
+
+        [TestMethod]
+        public void Should_SaveInventory(){
+            itemGateway.SaveInventory(this.shop.GetInventory());
+            CollectionAssert.AreEqual(this.shop.GetInventory(), itemGateway.GetInventory());
+        }
+
+        [TestMethod]
+        public void Should_FindItem(){
+            itemGateway.SaveInventory(this.shop.GetInventory());
+            Assert.AreEqual(this.shop.GetInventory()[0], itemGateway.FindItem(this.shop.GetInventory()[0].name, this.shop.GetInventory()[0].quality));
         }
 
     }
