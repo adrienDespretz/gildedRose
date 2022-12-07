@@ -26,18 +26,7 @@ namespace ConsoleView.Web
             var controller = new ConsoleController();
             var myClass = new ConsoleView();
             bool endApp = false;
-            var Inventory = shop.GetInventory();
-            List<ItemResponse> items = new List<ItemResponse>();
-            foreach (var item in Inventory)
-            {
-                items.Add(new ItemResponse
-                {
-                    name = item.name,
-                    sellIn = item.sellIn,
-                    quality = item.quality,
-                    value = item.basePrice
-                });
-            }
+
 
             int balance = 0;
             Console.WriteLine("Gilded Rose\r");
@@ -56,6 +45,18 @@ namespace ConsoleView.Web
                 switch (Console.ReadLine())
                 {
                     case "1":
+                        var Inventory = shop.GetInventory();
+                        List<ItemResponse> items = new List<ItemResponse>();
+                        foreach (var getItem in Inventory)
+                        {
+                            items.Add(new ItemResponse
+                            {
+                                name = getItem.name,
+                                sellIn = getItem.sellIn,
+                                quality = getItem.quality,
+                                value = getItem.basePrice
+                            });
+                        }
                         Console.WriteLine("Liste des articles : ");
                         myClass.DisplayInventory(items);
                         break;
@@ -68,7 +69,19 @@ namespace ConsoleView.Web
                         Console.WriteLine("Inventaire mis a jour ");
                         break;
                     case "4":
-                        myClass.DisplayInventory(items);
+                        var Inventorys = shop.GetInventory();
+                        List<ItemResponse> itemsForSell = new List<ItemResponse>();
+                        foreach (var itemsell in Inventorys)
+                        {
+                            itemsForSell.Add(new ItemResponse
+                            {
+                                name = itemsell.name,
+                                sellIn = itemsell.sellIn,
+                                quality = itemsell.quality,
+                                value = itemsell.basePrice
+                            });
+                        }
+                        myClass.DisplayInventory(itemsForSell);
                         SellItemRequest sellItemRequest = new SellItemRequest();
                         Console.WriteLine("Nom : ");
                         sellItemRequest.type = Console.ReadLine();

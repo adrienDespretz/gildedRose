@@ -1,5 +1,6 @@
 ﻿using GildedRose.Items;
 using GildedRose.ItemsRepository;
+using GildedRose.Tools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,7 +39,7 @@ namespace GildedRose.Appli
             List<Item> itemList = itemsGateway.GetInventory();
             itemList.Remove(itemFind);
             itemsGateway.SaveInventory(itemList);
-            //SendMail.SendNotif(itemFind.name);
+            SendMail.SendNotif(itemFind.name);
             balance += itemFind.basePrice;
 
             return balance;
