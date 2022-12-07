@@ -86,17 +86,10 @@ namespace ConsoleView.Web
                         Console.WriteLine("Nom : ");
                         sellItemRequest.type = Console.ReadLine();
                         Console.WriteLine("Quality : ");
-                        try
-                        {
                             sellItemRequest.quality = Convert.ToInt32(Console.ReadLine());
                             int result = controller.SellItem(sellItemRequest);
                             balance = result;
                             Console.WriteLine("Produit Vendu ");
-                        }
-                        catch
-                        {
-                            Console.WriteLine("Vous devez entrer un chiffre  ");
-                        }
                         break;
                     case "5":
                         var item = controller.LaunchAunction();
